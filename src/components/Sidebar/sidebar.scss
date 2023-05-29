@@ -1,0 +1,15 @@
+.sidebar {
+  min-height: 100vh;
+  padding: 1.5rem 0;
+  background: #dfdfdf;
+  display: inline-block;
+  flex: 6.25rem;
+
+  & > img {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 720px) {
+    display: none;
+  }
+}

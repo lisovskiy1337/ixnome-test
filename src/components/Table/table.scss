@@ -1,0 +1,8 @@
+.table {
+  margin-top: 5.25rem;
+
+  @media screen and (max-width: 520px) {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+}

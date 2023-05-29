@@ -1,0 +1,58 @@
+.add__panel {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  background: #ededed;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.3rem;
+
+  & > input {
+    width: 100%;
+    padding: 0.35rem 0.5rem;
+    border-radius: 0.125rem;
+    border: 1px solid transparent;
+    transition: border-color 250ms ease-in-out;
+
+    &:focus {
+      border-color: #0c94f5;
+    }
+  }
+
+  &-btn-wrapper {
+    text-align: right;
+  }
+  &-btn {
+    background: #fff;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.625rem;
+    font-weight: 500;
+    font-size: 0.7rem;
+    text-align: end;
+    transition: all 250ms ease-in-out;
+
+    &:hover {
+      background: #0c94f5;
+      color: #fff;
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    grid-template-columns: repeat(1, 1fr);
+
+    & > input {
+      padding: 0.75rem 0.5rem;
+    }
+    &-btn-wrapper {
+      text-align: center;
+    }
+
+    &-btn {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+    }
+  }
+}

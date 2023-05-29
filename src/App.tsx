@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Search from "./components/Search/Search";
+import { useAppSelector } from "./app/hooks";
+
+import AddPanel from "./components/AddPanel/AddPanel";
+import Table from "./components/Table/Table";
 
 function App() {
+  const isPanelOpen = useAppSelector((state) => state.tableRowData.isPanelOpen);
+  const data = useAppSelector((state) => state.tableRowData.data);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Sidebar />
+      <main className="main">
+        <Search />
+        <h3 className="packages">
+          Packages{" "}
+          <span className="text-ordinary gray">{data.length} entries</span>
+        </h3>
+        <Table />
+        {isPanelOpen && <AddPanel />}
+      </main>
     </div>
   );
 }

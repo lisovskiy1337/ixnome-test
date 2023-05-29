@@ -1,0 +1,23 @@
+.table__header {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.25rem;
+  font-family: "Roboto";
+  font-weight: 700;
+  color: #999999;
+  margin-bottom: 1.25rem;
+
+  @media screen and (max-width: 520px) {
+    min-width: 150vw;
+  }
+
+  &-item:last-child {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-btn {
+    @media screen and (max-width: 520px) {
+      display: none;
+    }
+  }
+}
